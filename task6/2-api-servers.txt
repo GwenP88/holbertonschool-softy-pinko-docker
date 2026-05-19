@@ -1,0 +1,2 @@
+# Lance les services Docker Compose en créant 2 instances du service back-end
+docker-compose up --scale back-end=2
