@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/banner.jpeg" alt="Project Docker banner">
+  <img src="./assets/banner.jpeg" alt="Project Docker banner" height="500">
 </p>
 
 # Docker
