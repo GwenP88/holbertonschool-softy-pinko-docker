@@ -1,0 +1,32 @@
+# Liste des services, chaque service correspond à un conteneur
+services:
+  # Service du back-end Flask
+  back-end:
+    # Indique à Docker Compose comment construire l’image
+    build:
+      # Dossier contenant les fichiers du back-end
+      context: ./back-end
+      # Nom du Dockerfile à utiliser
+      dockerfile: Dockerfile
+    # Nom donné à l’image Docker du back-end
+    image: softy-pinko-back-end:task4
+    # Associe le port 5252 du PC au port 5252 du conteneur
+    ports:
+      - "5252:5252"
+
+  # Service du front-end Nginx
+  front-end:
+    # Indique à Docker Compose comment construire l’image
+    build:
+      # Dossier contenant les fichiers du front-end
+      context: ./front-end
+      # Nom du Dockerfile à utiliser
+      dockerfile: Dockerfile
+    # Nom donné à l’image Docker du front-end
+    image: softy-pinko-front-end:task4
+    # Associe le port 9000 du PC au port 9000 du conteneur
+    ports:
+      - "9000:9000"
+    # Lance le back-end avant le front-end
+    depends_on:
+      - back-end
